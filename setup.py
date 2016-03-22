@@ -1,34 +1,37 @@
 #! /usr/bin/env python
+from setuptools import setup
 
-from setuptools import setup, find_packages
-import sys
-import os
+VERSION = '3.0'
 
-VERSION = '0.1.17'
-
+with open("README.md", "rb") as f:
+    long_descr = f.read()
 
 def main():
-    setup(name='flickrsmartsync',
+    setup(name='flickrsimplesync',
           version=VERSION,
           description="Sync/backup your photos to flickr easily",
-          long_description=open('README.rst').read(),
+          long_description=open('README.md').read(),
           classifiers=[
-              'Development Status :: 3 - Alpha',
+              'Development Status :: 4 - Beta',
               'Environment :: Console',
-              'Programming Language :: Python',
-              'License :: OSI Approved :: MIT License'
+              'Programming Language :: Python :: 3',
+              'Programming Language :: Python :: 3.5',
+              'License :: OSI Approved :: LGPL License',
+              'Topic :: Utilities',
+              'Topic :: Multimedia :: Graphics',
+              'Operating System :: OS Independent'
           ],
           keywords='flickr backup photo sync',
-          author='Faisal Raja',
-          author_email='support@altlimit.com',
-          url='https://github.com/faisalraja/flickrsmartsync',
-          license='MIT',
-          packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+          author='Brent Huisman',
+          author_email='mail@brenthuisman.net',
+          url='https://github.com/brenthuisman/flickrsimplesync',
+          license='LGPL',
           include_package_data=True,
           zip_safe=False,
-          install_requires=['watchdog', 'IPTCInfo'],
+          install_requires=['flickrapi'],
+          packages=['flickrsimplesync'],
           entry_points={
-              "console_scripts": ['flickrsmartsync = flickrsmartsync:main'],
+              "console_scripts": ['flickrsimplesync = flickrsimplesync:main'],
           },
           )
 

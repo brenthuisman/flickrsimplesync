@@ -1,45 +1,50 @@
-flickrsmartsync - Sync/backup your photos to flickr easily
-**********************************************************
+## flickrsimplesync - Sync/backup your photos to flickr easily
 
-flickrsmartsync is a tool you can use to easily sync up or down your
+flickrsimplesync is a tool you can use to easily sync up or down your
 photos in a drive/folder to flickr since now it has a free 1TB storage
 you can probably sync all your photo collection.
 
 
-Install
-=======
+### Install
 
-Simply run the following::
+Simply run the following:
 
     $ python setup.py install
 
-or `PyPi`_::
+Or run directly with:
 
-    $ pip install flickrsmartsync
+    $ python lastfmtagupdater
 
+### Example Usage
 
-Example Usage
-==============
-
-Both run from source and command line have same parameters::
+Both run from source and command line have same parameters:
 
     start uploading all photos/videos under that folder
-    $ flickrsmartsync
+    $ flickrsimplesync
+
     ignore videos for others use --help
-    $ flickrsmartsync --ignore-videos
+    $ flickrsimplesync --ignore-videos
 
     start downloading all photos on flickr to that folder
-    $ flickrsmartsync --download .
+    $ flickrsimplesync --download .
     
     start downloading all paths starting with that path
-    $ flickrsmartsync --download 2008/2008-01-01
-
-    for direct python access
-    $ python flickrsmartsync
+    $ flickrsimplesync --download 2008/2008-01-01
 
 
-Change log
-==========
+### Changelog
+
+3.0 (2016-03-21)
+ * Ported to Python v3, FlickrApi v2
+ * Renamed to flickrsimplesync
+ * Removed dependency on IPTCInfo, tag filtering option removed
+ * Removed file system monitoring
+ * Removed logging module, using print() and sys.stderr.write()
+
+0.1.17-2 (2014-09-06)
+ * Use Flickrs privacy preferences as a default setting for flicksmartsync
+ * Pull request refused: https://github.com/faisalraja/flickrsmartsync/pull/28
+ * Forked from https://github.com/faisalraja/flickrsmartsync
 
 0.1.17 (2014-08-12)
  * allow filtering files to upload by IPTC keyword (thanks ricardokirkner)
@@ -93,15 +98,3 @@ Change log
  * added run from source
 
 0.1 (2013-06-13)
-
-
-Links
-=====
-* `github.com`_ - source code
-* `altlimit.com`_ - website
-* `blog post`_ - blog post
-
-.. _github.com: https://github.com/faisalraja/flickrsmartsync
-.. _PyPi: https://pypi.python.org/pypi/flickrsmartsync
-.. _altlimit.com: http://www.altlimit.com
-.. _blog post: http://blog.altlimit.com/2013/05/backupsync-your-photos-to-flickr-script.html
